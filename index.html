@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEA Open Source - Global Excellence Assembly Framework</title>
+    <meta name="description" content="Democratizing Organizational Excellence Worldwide through collaborative development and collective intelligence">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body class="font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-xl border-b border-accent/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-accent to-chart-2 flex items-center justify-center shadow-lg shadow-accent/25">
+                            <svg class="h-5 w-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3l14 9-14 9V3z"/>
+                            </svg>
+                        </div>
+                        <h1 class="text-xl font-bold text-white tracking-tight">GEA Open Source</h1>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-1">
+                        <button onclick="scrollToSection('mission')" class="nav-item px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 relative text-gray-300 hover:text-white hover:bg-accent/10">Mission</button>
+                        <button onclick="scrollToSection('vision')" class="nav-item px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 relative text-gray-300 hover:text-white hover:bg-accent/10">Vision</button>
+                        <button onclick="scrollToSection('framework')" class="nav-item px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 relative text-gray-300 hover:text-white hover:bg-accent/10">Framework</button>
+                        <button onclick="scrollToSection('community')" class="nav-item px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 relative text-gray-300 hover:text-white hover:bg-accent/10">Community</button>
+                        <button onclick="scrollToSection('commons')" class="nav-item px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 relative text-gray-300 hover:text-white hover:bg-accent/10">Global Commons</button>
+                        <button onclick="scrollToSection('partnerships')" class="nav-item px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 relative text-gray-300 hover:text-white hover:bg-accent/10">Partnerships</button>
+                        <button onclick="scrollToSection('join')" class="nav-item px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 relative text-gray-300 hover:text-white hover:bg-accent/10">Join Us</button>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="hover:bg-accent/10 text-white hover:text-white border border-transparent hover:border-accent/30 px-3 py-2 rounded">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden border-t border-accent/20 hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background/98 backdrop-blur-xl">
+                <button onclick="scrollToSection('mission')" class="block px-4 py-3 rounded-lg text-base font-medium w-full text-left transition-all duration-200 text-gray-300 hover:text-white hover:bg-accent/10">Mission</button>
+                <button onclick="scrollToSection('vision')" class="block px-4 py-3 rounded-lg text-base font-medium w-full text-left transition-all duration-200 text-gray-300 hover:text-white hover:bg-accent/10">Vision</button>
+                <button onclick="scrollToSection('framework')" class="block px-4 py-3 rounded-lg text-base font-medium w-full text-left transition-all duration-200 text-gray-300 hover:text-white hover:bg-accent/10">Framework</button>
+                <button onclick="scrollToSection('community')" class="block px-4 py-3 rounded-lg text-base font-medium w-full text-left transition-all duration-200 text-gray-300 hover:text-white hover:bg-accent/10">Community</button>
+                <button onclick="scrollToSection('commons')" class="block px-4 py-3 rounded-lg text-base font-medium w-full text-left transition-all duration-200 text-gray-300 hover:text-white hover:bg-accent/10">Global Commons</button>
+                <button onclick="scrollToSection('partnerships')" class="block px-4 py-3 rounded-lg text-base font-medium w-full text-left transition-all duration-200 text-gray-300 hover:text-white hover:bg-accent/10">Partnerships</button>
+                <button onclick="scrollToSection('join')" class="block px-4 py-3 rounded-lg text-base font-medium w-full text-left transition-all duration-200 text-gray-300 hover:text-white hover:bg-accent/10">Join Us</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center w-full">
+        <div id="dotted-surface" class="absolute inset-0 -z-1"></div>
+        <!-- White mist overlay for faded effect -->
+        <div class="absolute inset-0 bg-gradient-to-b from-white/5 via-transparent to-white/10 pointer-events-none"></div>
+        
+        <div class="absolute inset-0 flex items-center justify-center">
+            <div class="pointer-events-none absolute -top-10 left-1/2 w-full h-full -translate-x-1/2 rounded-full bg-radial-gradient blur-[30px]"></div>
+            <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-8">
+                    <svg class="h-4 w-4 text-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3l14 9-14 9V3z"/>
+                    </svg>
+                    <span class="text-sm text-foreground font-medium">Open Source Excellence Framework</span>
+                </div>
+
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 text-balance">
+                    <span class="text-foreground">GEA</span>
+                    <br />
+                    <span class="text-foreground">OS Framework</span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto text-pretty leading-relaxed">
+                    Democratizing Organizational Excellence Worldwide through collaborative development and collective intelligence
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToSection('mission')" class="bg-accent hover:bg-accent/90 glow-effect group text-accent-foreground px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2">
+                        Explore Mission
+                        <svg class="h-5 w-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    <button onclick="scrollToSection('framework')" class="border-accent/30 hover:border-accent/50 hover:bg-accent/10 bg-transparent text-foreground hover:text-foreground px-6 py-3 rounded-lg font-medium transition-all duration-200 border">
+                        View Framework
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-12">
+        <div class="text-center space-y-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-foreground">Our Mission</h2>
+            <p class="text-xl text-muted-foreground max-w-4xl mx-auto">
+                To democratize organizational excellence by creating the world's largest collaborative ecosystem for sharing knowledge, tools, and best practices that enable organizations globally to achieve sustainable performance improvements and social impact.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="modern-card p-8 rounded-2xl bg-card border border-border hover:border-accent/50 transition-all duration-300">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
+                        <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-foreground">The Global Challenge</h3>
+                </div>
+                <p class="text-muted-foreground leading-relaxed mb-4">
+                    Millions of organizations worldwide lack access to premium excellence tools and frameworks.
+                </p>
+                <p class="text-muted-foreground leading-relaxed">
+                    Small and medium enterprises, emerging market organizations, academic institutions, and government agencies often face significant barriers to accessing world-class organizational development resources.
+                </p>
+            </div>
+
+            <div class="modern-card p-8 rounded-2xl bg-card border border-border hover:border-accent/50 transition-all duration-300">
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                        <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-foreground">The Open Source Solution</h3>
+                </div>
+                <p class="text-muted-foreground leading-relaxed mb-4">
+                    Harnessing collaborative development and collective intelligence for global excellence.
+                </p>
+                <ul class="space-y-2 text-muted-foreground">
+                    <li class="flex items-center gap-2">
+                        <svg class="h-5 w-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Excellence tools accessible to all regardless of economic status
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="h-5 w-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Global knowledge sharing accelerates innovation
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <svg class="h-5 w-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        Community-driven development meets real-world needs
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Framework Section -->
+    <section id="framework" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-12">
+        <div class="text-center space-y-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-foreground">Platform Features</h2>
+            <p class="text-xl text-muted-foreground max-w-4xl mx-auto">
+                Comprehensive tools and resources for organizational excellence
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="modern-card p-6 rounded-xl bg-card border border-border hover:border-accent/50 transition-all duration-300">
+                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center mb-4">
+                    <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-foreground mb-2">Development Tools</h3>
+                <p class="text-muted-foreground">Modern development environment with collaborative features</p>
+            </div>
+
+            <div class="modern-card p-6 rounded-xl bg-card border border-border hover:border-accent/50 transition-all duration-300">
+                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center mb-4">
+                    <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-foreground mb-2">Knowledge Base</h3>
+                <p class="text-muted-foreground">Comprehensive repository of best practices and frameworks</p>
+            </div>
+
+            <div class="modern-card p-6 rounded-xl bg-card border border-border hover:border-accent/50 transition-all duration-300">
+                <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center mb-4">
+                    <svg class="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold text-foreground mb-2">Community</h3>
+                <p class="text-muted-foreground">Global network of excellence practitioners and experts</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-12">
+        <div class="text-center space-y-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-foreground">Join Our Community</h2>
+            <p class="text-xl text-muted-foreground max-w-4xl mx-auto">
+                Connect with excellence practitioners worldwide
+            </p>
+        </div>
+    </section>
+
+    <!-- Global Commons Section -->
+    <section id="commons" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-12">
+        <div class="text-center space-y-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-foreground">Global Commons</h2>
+            <p class="text-xl text-muted-foreground max-w-4xl mx-auto">
+                Shared resources for organizational excellence
+            </p>
+        </div>
+    </section>
+
+    <!-- Partnerships Section -->
+    <section id="partnerships" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-12">
+        <div class="text-center space-y-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-foreground">Partnerships</h2>
+            <p class="text-xl text-muted-foreground max-w-4xl mx-auto">
+                Collaborating with organizations worldwide
+            </p>
+        </div>
+    </section>
+
+    <!-- Join Us Section -->
+    <section id="join" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-12">
+        <div class="text-center space-y-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-foreground">Join Us</h2>
+            <p class="text-xl text-muted-foreground max-w-4xl mx-auto">
+                Be part of the global excellence movement
+            </p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
